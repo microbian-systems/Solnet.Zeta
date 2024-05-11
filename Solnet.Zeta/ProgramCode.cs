@@ -82,7 +82,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                Greeks result = new Greeks();
+                Greeks result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.MarkPrices = new ulong[46];
@@ -227,7 +227,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                MarketIndexes result = new MarketIndexes();
+                MarketIndexes result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.Initialized = _data.GetBool(offset);
@@ -255,7 +255,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                OpenOrdersMap result = new OpenOrdersMap();
+                OpenOrdersMap result = new();
                 result.UserKey = _data.GetPubKey(offset);
                 offset += 32;
                 return result;
@@ -323,7 +323,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                State result = new State();
+                State result = new();
                 result.Admin = _data.GetPubKey(offset);
                 offset += 32;
                 result.StateNonce = _data.GetU8(offset);
@@ -391,7 +391,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                Underlying result = new Underlying();
+                Underlying result = new();
                 result.Mint = _data.GetPubKey(offset);
                 offset += 32;
                 return result;
@@ -417,7 +417,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                SettlementAccount result = new SettlementAccount();
+                SettlementAccount result = new();
                 result.SettlementPrice = _data.GetU64(offset);
                 offset += 8;
                 result.Strikes = new ulong[23];
@@ -454,7 +454,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                PerpSyncQueue result = new PerpSyncQueue();
+                PerpSyncQueue result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.Head = _data.GetU16(offset);
@@ -531,7 +531,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                ZetaGroup result = new ZetaGroup();
+                ZetaGroup result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.VaultNonce = _data.GetU8(offset);
@@ -623,7 +623,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                MarketNode result = new MarketNode();
+                MarketNode result = new();
                 result.Index = _data.GetU8(offset);
                 offset += 1;
                 result.Nonce = _data.GetU8(offset);
@@ -674,7 +674,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                SpreadAccount result = new SpreadAccount();
+                SpreadAccount result = new();
                 result.Authority = _data.GetPubKey(offset);
                 offset += 32;
                 result.Nonce = _data.GetU8(offset);
@@ -757,7 +757,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                MarginAccount result = new MarginAccount();
+                MarginAccount result = new();
                 result.Authority = _data.GetPubKey(offset);
                 offset += 32;
                 result.Nonce = _data.GetU8(offset);
@@ -826,7 +826,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                SocializedLossAccount result = new SocializedLossAccount();
+                SocializedLossAccount result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.OverbankruptAmount = _data.GetU64(offset);
@@ -854,7 +854,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                WhitelistDepositAccount result = new WhitelistDepositAccount();
+                WhitelistDepositAccount result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.UserKey = _data.GetPubKey(offset);
@@ -882,7 +882,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                WhitelistInsuranceAccount result = new WhitelistInsuranceAccount();
+                WhitelistInsuranceAccount result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.UserKey = _data.GetPubKey(offset);
@@ -910,7 +910,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                InsuranceDepositAccount result = new InsuranceDepositAccount();
+                InsuranceDepositAccount result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.Amount = _data.GetU64(offset);
@@ -938,7 +938,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                WhitelistTradingFeesAccount result = new WhitelistTradingFeesAccount();
+                WhitelistTradingFeesAccount result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.UserKey = _data.GetPubKey(offset);
@@ -972,7 +972,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                ReferrerAccount result = new ReferrerAccount();
+                ReferrerAccount result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.HasAlias = _data.GetBool(offset);
@@ -1014,7 +1014,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                ReferralAccount result = new ReferralAccount();
+                ReferralAccount result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.Referrer = _data.GetPubKey(offset);
@@ -1052,7 +1052,7 @@ namespace Solnet.Zeta
                     return null;
                 }
 
-                ReferrerAlias result = new ReferrerAlias();
+                ReferrerAlias result = new();
                 result.Nonce = _data.GetU8(offset);
                 offset += 1;
                 result.Alias = _data.GetBytes(offset, 15);
@@ -2844,209 +2844,209 @@ namespace Solnet.Zeta
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<Greeks>>> GetGreekssAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = Greeks.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = Greeks.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<Greeks>>(res);
-            List<Greeks> resultingAccounts = new List<Greeks>(res.Result.Count);
+            List<Greeks> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => Greeks.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<Greeks>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarketIndexes>>> GetMarketIndexessAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = MarketIndexes.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = MarketIndexes.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarketIndexes>>(res);
-            List<MarketIndexes> resultingAccounts = new List<MarketIndexes>(res.Result.Count);
+            List<MarketIndexes> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => MarketIndexes.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarketIndexes>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<OpenOrdersMap>>> GetOpenOrdersMapsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = OpenOrdersMap.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = OpenOrdersMap.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<OpenOrdersMap>>(res);
-            List<OpenOrdersMap> resultingAccounts = new List<OpenOrdersMap>(res.Result.Count);
+            List<OpenOrdersMap> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => OpenOrdersMap.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<OpenOrdersMap>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<State>>> GetStatesAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = State.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = State.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<State>>(res);
-            List<State> resultingAccounts = new List<State>(res.Result.Count);
+            List<State> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => State.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<State>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<Underlying>>> GetUnderlyingsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = Underlying.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = Underlying.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<Underlying>>(res);
-            List<Underlying> resultingAccounts = new List<Underlying>(res.Result.Count);
+            List<Underlying> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => Underlying.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<Underlying>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SettlementAccount>>> GetSettlementAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = SettlementAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = SettlementAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SettlementAccount>>(res);
-            List<SettlementAccount> resultingAccounts = new List<SettlementAccount>(res.Result.Count);
+            List<SettlementAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => SettlementAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SettlementAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<PerpSyncQueue>>> GetPerpSyncQueuesAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = PerpSyncQueue.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = PerpSyncQueue.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<PerpSyncQueue>>(res);
-            List<PerpSyncQueue> resultingAccounts = new List<PerpSyncQueue>(res.Result.Count);
+            List<PerpSyncQueue> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => PerpSyncQueue.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<PerpSyncQueue>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ZetaGroup>>> GetZetaGroupsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = ZetaGroup.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = ZetaGroup.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ZetaGroup>>(res);
-            List<ZetaGroup> resultingAccounts = new List<ZetaGroup>(res.Result.Count);
+            List<ZetaGroup> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => ZetaGroup.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ZetaGroup>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarketNode>>> GetMarketNodesAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = MarketNode.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = MarketNode.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarketNode>>(res);
-            List<MarketNode> resultingAccounts = new List<MarketNode>(res.Result.Count);
+            List<MarketNode> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => MarketNode.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarketNode>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SpreadAccount>>> GetSpreadAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = SpreadAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = SpreadAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SpreadAccount>>(res);
-            List<SpreadAccount> resultingAccounts = new List<SpreadAccount>(res.Result.Count);
+            List<SpreadAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => SpreadAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SpreadAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarginAccount>>> GetMarginAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = MarginAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = MarginAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarginAccount>>(res);
-            List<MarginAccount> resultingAccounts = new List<MarginAccount>(res.Result.Count);
+            List<MarginAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => MarginAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<MarginAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SocializedLossAccount>>> GetSocializedLossAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = SocializedLossAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = SocializedLossAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SocializedLossAccount>>(res);
-            List<SocializedLossAccount> resultingAccounts = new List<SocializedLossAccount>(res.Result.Count);
+            List<SocializedLossAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => SocializedLossAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<SocializedLossAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistDepositAccount>>> GetWhitelistDepositAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = WhitelistDepositAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = WhitelistDepositAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistDepositAccount>>(res);
-            List<WhitelistDepositAccount> resultingAccounts = new List<WhitelistDepositAccount>(res.Result.Count);
+            List<WhitelistDepositAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => WhitelistDepositAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistDepositAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistInsuranceAccount>>> GetWhitelistInsuranceAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = WhitelistInsuranceAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = WhitelistInsuranceAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistInsuranceAccount>>(res);
-            List<WhitelistInsuranceAccount> resultingAccounts = new List<WhitelistInsuranceAccount>(res.Result.Count);
+            List<WhitelistInsuranceAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => WhitelistInsuranceAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistInsuranceAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<InsuranceDepositAccount>>> GetInsuranceDepositAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = InsuranceDepositAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = InsuranceDepositAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<InsuranceDepositAccount>>(res);
-            List<InsuranceDepositAccount> resultingAccounts = new List<InsuranceDepositAccount>(res.Result.Count);
+            List<InsuranceDepositAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => InsuranceDepositAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<InsuranceDepositAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistTradingFeesAccount>>> GetWhitelistTradingFeesAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = WhitelistTradingFeesAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = WhitelistTradingFeesAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistTradingFeesAccount>>(res);
-            List<WhitelistTradingFeesAccount> resultingAccounts = new List<WhitelistTradingFeesAccount>(res.Result.Count);
+            List<WhitelistTradingFeesAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => WhitelistTradingFeesAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<WhitelistTradingFeesAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferrerAccount>>> GetReferrerAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = ReferrerAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = ReferrerAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferrerAccount>>(res);
-            List<ReferrerAccount> resultingAccounts = new List<ReferrerAccount>(res.Result.Count);
+            List<ReferrerAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => ReferrerAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferrerAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferralAccount>>> GetReferralAccountsAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = ReferralAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = ReferralAccount.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferralAccount>>(res);
-            List<ReferralAccount> resultingAccounts = new List<ReferralAccount>(res.Result.Count);
+            List<ReferralAccount> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => ReferralAccount.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferralAccount>>(res, resultingAccounts);
         }
 
         public async Task<Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferrerAlias>>> GetReferrerAliassAsync(string programAddress, Commitment commitment = Commitment.Finalized)
         {
-            var list = new List<Solnet.Rpc.Models.MemCmp>{new Solnet.Rpc.Models.MemCmp{Bytes = ReferrerAlias.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
+            var list = new List<Solnet.Rpc.Models.MemCmp>{new() {Bytes = ReferrerAlias.ACCOUNT_DISCRIMINATOR_B58, Offset = 0}};
             var res = await RpcClient.GetProgramAccountsAsync(programAddress, commitment, memCmpList: list);
             if (!res.WasSuccessful || !(res.Result?.Count > 0))
                 return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferrerAlias>>(res);
-            List<ReferrerAlias> resultingAccounts = new List<ReferrerAlias>(res.Result.Count);
+            List<ReferrerAlias> resultingAccounts = new(res.Result.Count);
             resultingAccounts.AddRange(res.Result.Select(result => ReferrerAlias.Deserialize(Convert.FromBase64String(result.Account.Data[0]))));
             return new Solnet.Programs.Models.ProgramAccountsResultWrapper<List<ReferrerAlias>>(res, resultingAccounts);
         }
