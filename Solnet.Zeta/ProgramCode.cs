@@ -1,23 +1,19 @@
+using Solnet.Programs.Abstract;
+using Solnet.Programs.Utilities;
+using Solnet.Rpc;
+using Solnet.Rpc.Core.Http;
+using Solnet.Rpc.Core.Sockets;
+using Solnet.Rpc.Types;
+using Solnet.Wallet;
+using Solnet.Zeta.Accounts;
+using Solnet.Zeta.Errors;
+using Solnet.Zeta.Program;
+using Solnet.Zeta.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
-using Solnet;
-using Solnet.Programs.Abstract;
-using Solnet.Programs.Utilities;
-using Solnet.Rpc;
-using Solnet.Rpc.Builders;
-using Solnet.Rpc.Core.Http;
-using Solnet.Rpc.Core.Sockets;
-using Solnet.Rpc.Types;
-using Solnet.Wallet;
-using Solnet.Zeta;
-using Solnet.Zeta.Program;
-using Solnet.Zeta.Errors;
-using Solnet.Zeta.Accounts;
-using Solnet.Zeta.Events;
-using Solnet.Zeta.Types;
 
 namespace Solnet.Zeta
 {
